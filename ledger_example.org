@@ -1,0 +1,100 @@
+* 2020年
+* 账本 样例
+
+** 汇总
+#+name: 账户总览
+#+BEGIN_SRC ledger :cmdline -s bal :noweb yes
+<<startup>>
+<<income>>
+<<inner_trans>>
+<<outer_trans>>
+<<expenses_202008>>
+#+END_SRC
+
+#+name: 按月汇总
+#+BEGIN_SRC ledger :cmdline reg -M  :noweb yes
+<<startup>>
+<<income>>
+<<inner_trans>>
+<<outer_trans>>
+<<expenses_202008>>
+#+END_SRC
+
+#+RESULTS: 账户总览
+#+begin_example
+           -12.00 元  收入
+           -10.00 元     公众号
+            -2.00 元     红包
+            44.50 元  消费
+             4.50 元     吃喝玩乐
+            38.00 元     水电煤网
+             2.00 元     群红包
+           -32.50 元  账户
+           -40.50 元     建行信用卡
+             5.00 元     微信
+             3.00 元     现金
+--------------------
+                   0
+#+end_example
+
+#+RESULTS: 按月汇总
+: 20-Aug-01 - 20-Aug-31           收入: 公众号              -10.00 元    -10.00 元
+:                                 收入: 红包                 -2.00 元    -12.00 元
+:                                 消费: 吃喝玩乐              4.50 元     -7.50 元
+:                                 消费: 水电煤网             38.00 元     30.50 元
+:                                 消费: 群红包                2.00 元     32.50 元
+:                                 账户: 建行信用卡          -40.50 元     -8.00 元
+:                                 账户: 微信                  5.00 元     -3.00 元
+:                                 账户: 现金                  3.00 元            0
+
+** 账户设置
+#+name: startup
+#+BEGIN_SRC ledger :noweb yes
+2020/08/01 * 基础账户设置
+    账户: 现金         0.00  元
+    账户: 微信         0.00  元
+    初始: 初始结余
+#+END_SRC
+
+** 收入部分
+#+name: income
+#+BEGIN_SRC ledger :noweb yes
+2020/08/09 * 领红包
+    账户: 微信         2.00 元
+    收入: 红包
+2020/08/10 * 公众号赞赏
+    账户: 微信        10.00 元
+    收入: 公众号
+#+END_SRC
+
+** 转账
+#+name: inner_trans
+#+BEGIN_SRC ledger :noweb yes
+2020/08/10 * 转账
+    账户: 现金                                  5.0 元
+    账户: 微信
+#+END_SRC
+
+** 借还款
+#+name: outer_trans
+#+BEGIN_SRC ledger :noweb yes
+#+END_SRC
+
+** 日常开支
+*** 2020 年日常开支
+**** 2020 年 8 月开支
+#+name: expenses_202008
+#+BEGIN_SRC ledger :noweb yes
+2020/08/12 描述: 矿泉水
+    消费: 吃喝玩乐                         2.0 元
+    账户: 现金
+2020/08/12 * 红包
+    消费: 群红包                            2.0 元
+    账户: 微信
+2020/08/13 * 可乐
+    消费: 吃喝玩乐                          2.5 元
+    账户: 建行信用卡
+2020/08/13 * 水费
+    消费: 水电煤网                          38.0 元
+    账户: 建行信用卡
+#+END_SRC
