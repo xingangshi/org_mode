@@ -116,3 +116,6 @@ info:org:External%20links                   Info node link (with encoded space)
 ** list
 1. a
 + b.1
+
+*  包含其他文件
+#+INCLUDE: "./ledger_example.org::按月汇总1"
