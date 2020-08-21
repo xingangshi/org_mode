@@ -113,9 +113,31 @@ info:org:External%20links                   Info node link (with encoded space)
 |------+------+-----|
 |      |      |     |
 
+| A  | B  | C  |
+|----+----+----|
+| a0 |    | h1 |
+| a2 | c1 | c3 |
+| a1 | cs | ds |
+|    |    |    |
+
 ** list
 1. a
 + b.1
 
-*  包含其他文件
+* 包含其他文件
+"C-c ' (org-edit~special)"
+"<I + tab
 #+INCLUDE: "./ledger_example.org::按月汇总1"
+
+* 代码块
+"C-c C-c 执行代码
+"<s + tab
+
+#+BEGIN_SRC python
+print("hello world")
+return 2+2
+#+END_SRC
+
+#+RESULTS:
+: 4
+
