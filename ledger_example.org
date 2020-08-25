@@ -1,26 +1,29 @@
 * 账本 样例
 
-** 汇总一览
-*** 公式部分
+** 公式部分
 ;#+BEGIN_SRC ledger :cmdline -n bal :noweb yes
 #+name: 当前账户总览
 #+BEGIN_SRC ledger :cmdline -s  bal :noweb yes
 <<startup>>
-<<income>>
-<<inner_trans>>
-<<outer_trans>>
-<<expenses_202008>>
-#+END_SRC
-#+name: 按月汇总
-#+BEGIN_SRC ledger :cmdline reg -M :noweb yes
-<<startup>>
-<<income>>
 <<inner_trans>>
 <<outer_trans>>
 <<expenses_202008>>
 #+END_SRC
 
-*** 当前账户总览
+#+name: 2020 年按月汇总
+#+BEGIN_SRC ledger :cmdline reg -M :noweb yes
+<<startup>>
+<<inner_trans>>
+<<outer_trans>>
+<<expenses_202008>>
+#+END_SRC
+
+#+name: 2020 年 8 月收支汇总
+#+BEGIN_SRC ledger :cmdline -s  bal :noweb yes
+<<expenses_202008>>
+#+END_SRC
+
+** 当前账户总览
 #+RESULTS: 当前账户总览
 #+begin_example
         -10000.00 元  其他: 初始金额
@@ -56,8 +59,9 @@
                    0
 #+end_example
 
-*** 按月汇总 
-#+RESULTS: 按月汇总
+** 2020 年收支一览
+*** 2020 年收支按月汇总
+#+RESULTS: 2020 年按月汇总
 #+begin_example
 20-Aug-01 - 20-Aug-31           其他: 初始金额         -10000.00 元 -10000.00 元
                                 收入: 公众号              -10.00 元 -10010.00 元
@@ -81,6 +85,30 @@
                                 账户: 现金               3898.00 元            0
 #+end_example
 
+*** 2020 年 8 月收支按月汇总
+#+RESULTS: 2020 年 8 月收支汇总
+#+begin_example
+            19.00 元  收入
+           -10.00 元     公众号
+            31.00 元     投资
+            -2.00 元     红包
+            44.50 元  消费
+             4.50 元     吃喝玩乐
+            38.00 元     水电煤网
+             2.00 元     群红包
+           -63.50 元  账户
+            10.00 元     微信
+           -31.00 元     收益
+           -50.00 元       股票
+            19.00 元       黄金
+           -40.50 元     欠款
+           -38.00 元       建行信用卡
+            -2.50 元       招行信用卡
+            -2.00 元     现金
+--------------------
+                   0
+#+end_example
+
 ** 账户设置（你有哪些账户的）
 #+name: startup
 #+BEGIN_SRC ledger :noweb yes
@@ -90,23 +118,6 @@
     账户: 欠款: 建行信用卡   0.00 元
     账户: 欠款: 招行信用卡   0.00 元
     其他: 初始金额
-#+END_SRC
-
-** 收入部分
-#+name: income
-#+BEGIN_SRC ledger :noweb yes
-2020/08/09 * 领红包
-    账户: 微信         2.00 元
-    收入: 红包
-2020/08/10 * 公众号赞赏
-    账户: 微信          10.00 元
-    收入: 公众号
-2020/08/14 * 投资收益
-    账户: 收益: 黄金   19.00 元
-    收入: 投资
-2020/08/14 * 投资收益
-    账户: 收益: 股票  -50.00 元
-    收入: 投资
 #+END_SRC
 
 ** 转账或投资
@@ -148,6 +159,19 @@
 **** 2020 年 8 月开支
 #+name: expenses_202008
 #+BEGIN_SRC ledger :noweb yes
+2020/08/09 * 领红包
+    账户: 微信         2.00 元
+    收入: 红包
+2020/08/10 * 公众号赞赏
+    账户: 微信          10.00 元
+    收入: 公众号
+2020/08/14 * 投资收益
+    账户: 收益: 黄金   19.00 元
+    收入: 投资
+2020/08/14 * 投资收益
+    账户: 收益: 股票  -50.00 元
+    收入: 投资
+
 2020/08/12 描述: 矿泉水
     消费: 吃喝玩乐                         2.0 元
     账户: 现金
