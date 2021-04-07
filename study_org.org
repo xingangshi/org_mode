@@ -204,3 +204,32 @@ return 2+2
     (interactive)
     "do stuff here"
 #+end_src
+
+* ditaa
+
+[[https://emacs.stackexchange.com/questions/20731/setting-up-ditaa-in-org-mode][ditta install]]
+
+#+begin_src elisp
+(expand-file-name
+             "ditaa.jar"
+      (file-name-as-directory
+            (expand-file-name
+                "scripts"
+               (file-name-as-directory
+                  (expand-file-name
+                      "../contrib"
+                     (file-name-directory (org-find-library-dir "org")))))))
+#+end_src
+
+#+RESULTS:
+: /usr/local/Cellar/emacs/27.1/share/emacs/27.1/lisp/contrib/scripts/ditaa.jar
+
+#+begin_src ditaa :file ./helloworld.png
++----------------+
+| Hello World!!! |
+|                |
++----------------+
+#+end_src
+
+#+RESULTS:
+[[file:./helloworld.png]]
