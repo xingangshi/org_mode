@@ -156,3 +156,51 @@ return 2+2
 #+RESULTS:
 : 4
 
+
+* org mode table with multi lines
+| x | y |
+|---+---|
+| 1 | 2 |
+| 2 | 4 |
+#+TBLFM: $2='(* $1 1);N
+#+TBLFM: $2='(* $1 2);N
+
+
+#+NAME: my_add
+#+begin_src emacs-lisp
+  (+ a b)
+  ; feel free to use as many lines or comments here!
+  ; press C-c ' here to edit in emacs-lisp-mode
+#+end_src
+
+|  a |  b | a+b |
+|----+----+-----|
+|  1 |  2 |   3 |
+| 10 | 20 |  30 |
+|  5 | -7 |  -2 |
+#+TBLFM: $3='(org-sbe "my_add" (a $1) (b $2))
+
+
+#+NAME: table_1
+| col_1 | col_2         |
+|-------+---------------|
+|       | do stuff here |
+|       |               |
+|-------+---------------|
+#+TBLFM: @2$2='(org-sbe my_shared_function)
+
+#+NAME: table_2
+| col_1         | col_2 |
+|---------------+-------|
+|               |       |
+| do stuff here |       |
+|---------------+-------|
+#+TBLFM: @3$1='(org-sbe my_shared_function)
+
+
+#+NAME: my_shared_function
+#+begin_src emacs-lisp
+    "Function to be shared between tables."
+    (interactive)
+    "do stuff here"
+#+end_src
