@@ -1,16 +1,15 @@
-# org_mode
----
+# Org Mode 笔记
 
-Emacs org mode study iand share.
+[Emacs](https://www.gnu.org/software/emacs/) [Org Mode. Your life in plain text](https://orgmode.org/) study Notes to share.
 
----
+### 1. [Emacs shortcuts](/emacsShortcuts.txt)
 
-### org mode shortcut
+### 2. [Org mode shortcuts](https://orgmode.org/worg/orgcard.html)
 
-#### Column 视图
+#### 2.1 Column 视图
 
 使用 `C-c C-x C-c` 进入列模式。
 
-#### Agenda view 日历视图
+#### 2.2 Agenda view 日历视图
 
 使用 `C-c a a` 进入日历视图。
