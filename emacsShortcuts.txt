@@ -1,0 +1,210 @@
+Emacs shortcuts
+
+IMPORTANT
+=======================================================
+quit the running/entered command: C-g
+undo previous action: C-x y
+undo all changes since last save: M-x revert-buffer RETURN
+Recover text from an autosave-file: M-x recover-file RETURN
+recover-session RETURN if you edited several files: M-x
+display load path: chv load-path
+view command history: mx list-command-history
+terminal emulator: mx term
+
+FRAMES
+=======================================================
+create frame: cx52
+select frame:
+cycle frame: cx5o
+remove frame: cx50
+
+split-window-horizontally: cx3
+split-window-vertically: cx2
+other-window: cxo
+delete-window: cx0
+scroll-other-window: cmv
+
+FILE
+=======================================================
+C-x C-f     find-file       Find a file and read it to screen.
+C-x C-v     find-alternate-file Read a different file.
+C-x i       insert-file     Insert a file at the cursors position.
+C-x C-s     save-buffer     Save the current buffer.
+C-x C-w     write-file      Write the contents of the buffer to a file.
+C-x C-c     save-buffers-kill-emacs Save all open buffers and get out of emacs.
+C-z     suspend-emacs       Suspend emacs.
+save-some-buffers: cx s
+Save As: CX CW
+Save All: CX, S
+Revert to File: CXCV
+revert-buffer: MX,
+Quit: CXCC
+
+BUFFER
+=======================================================
+switch-to-buffer: CXB
+list-buffers: CXCB
+kill-buffer: CXK
+vc-toggle-read-only: CXCQ
+
+EDIT
+=======================================================
+repeat the following command n times: M-n
+repeat the following command 4 times: C-u
+repeat n times: C-u n
+
+undo: Ctrl-_
+
+Begin Selection: Ctrl-SPC
+Cancel Selection: Ctrl-G
+Cut Selection: Ctrl-W
+Cut Line    : Ctrl-K
+
+Copy: cw
+Paste: Ctrl-Y
+Copy Selection to Numbered Clipboard: Ctrl-X R S [#]
+Paste from Numbered Clipboard: Ctrl-X R I [#]
+global copy:
+global paste:
+
+Del     backward-delete-char    Delete the previous character.
+C-d     delete-char     Delete the character under the cursor.
+M-Del       backward-kill-word  Delete the previous word.
+C-k     kill-line       Delete from the cursor to the end of line.
+M-k     kill-sentence       Delete the sentence the cursor is in.
+C-x Del     backward-kill-sentence  Delete the previous sentence.
+C-y     yank            Restore deleted text at cursor.
+C-w     kill-region     Delete a marked region.
+        backward-kill-paragraph Delete the previous paragraph.
+        kill-paragraph      Delete from the cursor to the end of the paragraph.
+
+C-t     transpose-chars     Transpose the two letters.
+M-t     transpose-words     Switch two words.
+C-x C-t     transpose-lines     Switch two lines.
+        transpose-sentences Switch two sentences.
+        transpose-paragraphs    Switch two paragraphs.
+
+M-c     capitalize-word     Capitalize the first letter of the current word.
+M-u     upcase-word     Make the word all uppercase.
+M-l     downcase-word       Make the word all lowercase.
+C-x C-l     downcase-region     Make the region all lowercase.
+C-x C-u     uppercase-region    Make the region all uppercase.
+
+
+INDENTATION
+=======================================================
+set indent width:
+newline-and-indent: cj
+
+CURSOR MOVEMENT
+=======================================================
+C-f     forward-char        Move cursor one character.
+C-b     backward-char       Move backward one character.
+C-p     previous-line       Move up one line.
+C-n     next-line       Move down one line.
+M-f     forward-word        Move to the next word.  (words are defined by whitespace/special characters.)
+M-b     backward-word       Move to the previous word.
+C-a     beginning-of-line   Move to the beginning of the line.
+C-e     end-of-line     Move to the end of the line.
+M-a     backward-sentence   Move back one sentence.
+C-v     scroll-up       Scroll up one screen.
+M-v     scroll-down     Scroll down one screen.
+C-x [       backward-page       Go back one page.
+C-x ]       forward-page        Go forward one page.
+M->     end-of-buffer       Move to end of buffer.
+M-<     beginning-of-buffer Move to beginning of the current buffer.
+C-l     recenter        Redraw the screen with the current line in the center.
+M-(a number)    digit-argument      Do the next command (a number) of times.
+
+
+SEARCH
+=======================================================
+isearch-forward: Ctrl-S
+isearch-backward: Ctrl-R
+Regexp Inc Search: Meta-Ctrl-S
+Regexp Inc Search Reverse: Meta-Ctrl-R
+Interactive Search and Replace: Meta-%
+Goto Line Numbe: Meta-X goto-line
+Previous Matching Bracket: Meta-Ctrl-B (or ESC Ctrl-B)
+Next Matching Bracket: Meta-Ctrl-F (or ESC Ctrl-F)
+
+word search: csRETcw
+
+WINDOW
+=======================================================
+Close   Ctrl-X, K
+Next Window Ctrl-X, B
+Choose Window   Ctrl-X, Ctrl-B
+delete-other-windows cx1
+split-window-vertically cx3
+split-window-horizontally cx2
+other-window cxo
+delete-window: cx0
+balance-windows cx+
+Activate Menu Bar   Meta-`
+
+REGISTERS
+=======================================================
+Copy Selection to Numbered Clipboard    Ctrl-X R S [#]
+Paste from Numbered Clipboard   Ctrl-X R I [#]
+
+
+FORMATTING
+=======================================================
+Re-flow Paragraph: Meta-Q
+Indent Selection:   Meta-Control-\
+Uppercase Word: Meta-U
+Lowercase Word: Meta-L
+Capitalize Word: Meta-C
+Uppercase Selection: Ctrl-X, Ctrl-U
+Lowercase Selection: Ctrl-X, Ctrl-L
+
+MACROS
+=======================================================
+Start Recording: Ctrl-X, (
+Stop Recording: Ctrl-X, )
+Play Macro: Ctrl-X, E
+
+MARK
+=========================================================
+C-@     set-mark        Mark the beginning (or end) of a region.
+C-Space     set-mark        Ibid.
+C-x C-p     mark-page       Mark the current page.
+C-x C-x     exchange-point-and-make Exchange the location of the cursor and the mark.
+C-x h       mark-whole-buffer   Mark the current buffer.
+M-q     fill-paragraph      Reset the paragraph.
+M-g     fill-region     Reformat individual paragraphs with region.
+M-h     mark-paragraph      Mark select paragraph.
+
+mark-word: m@
+mark-paragraph: mh
+mark-sexp: cm@
+mark-defun: cmh
+mark-page: cxcp
+mark-whole-buffer: cxh
+
+exchange-point-and-mark: cxcx
+kill-region: cw
+kill-ring-save: mw
+indent-rigidly: cxci
+cxcl: downcase-region
+upcase-region: cxcu
+fill-region
+
+Set Numbered Bookmark: Ctrl-X R SPC [#]
+Jump to Numbered Bookmarks: Ctrl-X R J [#]
+
+SESSION
+=======================================================
+SaveSession: mx session-save-session
+OpenSession:
+
+COLOR THEME
+=======================================================
+Open: color-theme-{themename}
+
+PYTHON
+=======================================================
+switch to interpreter: cccz
+eval buffer: cccc
+check file: cccv
